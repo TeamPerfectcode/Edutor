@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "457802939589",
+    "firebase_url": "https://edutor-624d8.firebaseio.com",
+    "project_id": "edutor-624d8",
+    "storage_bucket": "edutor-624d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457802939589:android:eb4468a67c1fe250bb04ac",
+        "android_client_info": {
+          "package_name": "com.example.edutor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457802939589-uba3n50ikeprhvu87kao5a6k4g2u3uqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMaZT45DVWcdjpwDVd7_EGn50-_fHjkGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457802939589-uba3n50ikeprhvu87kao5a6k4g2u3uqe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

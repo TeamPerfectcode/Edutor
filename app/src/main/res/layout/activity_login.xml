@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Login">
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header_register"
+        android:gravity="center"
+        android:text="Welcome to Edutor"
+        android:textColor="#fff"
+        android:textSize="30dp">
+
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="50dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:hint="Email"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxStrokeColor="@color/colorPurple"
+                    app:counterEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:hint="Password"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxStrokeColor="@color/colorPurple"
+                    app:hintAnimationEnabled="true"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lpass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv"
+            android:layout_alignLeft="@+id/cv"
+            android:layout_alignRight="@+id/cv"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginRight="35dp"
+            android:elevation="10dp">
+
+            <Button
+                android:id="@+id/btlogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_ui"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="25dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="310dp">
+
+            <TextView
+                android:id="@id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forget Password?"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv"
+                android:layout_marginTop="20dp"
+                android:text="New user!click on SignUp "
+                android:textAlignment="center"
+                android:textSize="15dp">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/btsignup"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="0dp"
+                android:background="@drawable/bg_ui"
+                android:text="SignUp"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="25dp" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:elevation="12dp"
+        android:visibility="gone"
+        android:id="@+id/prglogin"/>
+</RelativeLayout>

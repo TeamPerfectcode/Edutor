@@ -1,0 +1,36 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--                <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <item name="colorPrimaryDark">@color/homecard</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--        <item name="colorControlHighlight">@color/homecard</item>-->
+        <!--        <item name="android:homeAsUpIndicator">@drawable/ic_dehaze_black_24dp</item>-->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+
+    </style>
+
+    <!--    Auth Page Theme-->
+    <style name="Auththeme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--                <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <item name="colorPrimaryDark">@color/homecard</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--        <item name="colorControlHighlight">@color/homecard</item>-->
+        <!--        <item name="android:homeAsUpIndicator">@drawable/ic_dehaze_black_24dp</item>-->
+
+        <!--       property for making toolbar and status bar background same -->
+        <item name="android:windowTranslucentStatus">true</item>
+
+    </style>
+
+    <!--    Drawer layout  theme -->
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+</resources>
