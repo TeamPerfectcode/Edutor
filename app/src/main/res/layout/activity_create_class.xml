@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".create.create_class"
-    android:background="@drawable/curvehome">
+    tools:context=".create.create_class">
 
     <TextView
         android:layout_width="match_parent"
@@ -14,7 +13,7 @@
         android:fontFamily="@font/raleway_semibold"
         android:text="Create Class"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/homecard"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="50dp"
         app:boxCornerRadiusBottomStart="14dp"
         app:boxCornerRadiusTopEnd="14dp"
@@ -69,12 +68,34 @@
             android:hint="Description">
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/category_InputLayout"
+        app:layout_constraintTop_toBottomOf="@id/desc_InputLayout"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="20dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxStrokeColor="@color/homecard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/categoryEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_semibold"
+            android:hint="Category">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearbox"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/desc_InputLayout"
+        app:layout_constraintTop_toBottomOf="@id/category_InputLayout"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp">

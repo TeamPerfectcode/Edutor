@@ -27,6 +27,7 @@ class create_class : AppCompatActivity() {
         db = FirebaseDatabase.getInstance().reference
         val title:TextInputEditText = findViewById(R.id.titleEdit)
         val desc:TextInputEditText = findViewById(R.id.descEdit)
+        val category:TextInputEditText = findViewById(R.id.categoryEdit)
         val toggleState:SwitchMaterial=findViewById(R.id.toggler)
         var access=""
         toggleState.textOn="1"
@@ -35,18 +36,22 @@ class create_class : AppCompatActivity() {
             val class_id = UUID.randomUUID().toString()
             val classTitle = title.text.toString()
             val classDesc = desc.text.toString()
+            val classCategory = category.text.toString()
+            val userId = auth.currentUser?.uid.toString()
             if(toggleState.isChecked) {
                 access = toggleState.textOn.toString()
             }
             else
                 access=toggleState.textOff.toString()
+
             var hMap: HashMap<String, Any> = HashMap<String, Any>()
             hMap.put("id",class_id)
             hMap.put("title",classTitle)
             hMap.put("description",classDesc)
             hMap.put("access",access)
+            hMap.put("category",classCategory)
             Log.d("d1","$classTitle $classDesc")
-            db.child("COURSES").child(class_id).setValue(hMap).addOnSuccessListener {
+            db.child("COURSES").child(userId).child(class_id).setValue(hMap).addOnSuccessListener {
                 Toast.makeText(
                     baseContext, "Class created successfully",
                     Toast.LENGTH_SHORT
