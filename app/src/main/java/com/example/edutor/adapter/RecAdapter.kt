@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.edutor.R
+import com.example.edutor.model.CoursesCreated
 import com.example.edutor.model.active
 import com.google.android.material.progressindicator.ProgressIndicator
 import de.hdodenhof.circleimageview.CircleImageView
@@ -32,6 +33,7 @@ class RecAdapter(var context: Context, var list: ArrayList<active>, var pos:Int)
     override fun getItemCount(): Int {
         return list.size
     }
+
     override fun onBindViewHolder(holder: RecHolder, position: Int) {
         if(pos==1) {
             val logo = holder.itemView.findViewById<CircleImageView>(R.id.courselogo)
@@ -53,6 +55,7 @@ class RecAdapter(var context: Context, var list: ArrayList<active>, var pos:Int)
             trel.setBackgroundColor(color)
             c1.text = list[position].coursename1
             c2.text = list[position].coursename2
+
         }
     }
     override fun getItemViewType(position: Int): Int {
