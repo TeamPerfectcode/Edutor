@@ -27,8 +27,8 @@
                 android:layout_marginTop="10dp"
                 android:text="Front-End Development"
                 android:textAlignment="center"
-                android:textSize="20sp"
                 android:textColor="@color/white"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -39,11 +39,11 @@
                 android:layout_marginTop="10dp"
                 android:inputType="textMultiLine"
                 android:maxLines="3"
-                android:textSize="18sp"
                 android:scrollHorizontally="false"
                 android:text="Basics of HTML5 and CSS.Learn to integrate  a basic web page"
                 android:textAlignment="center"
-                android:textColor="#f7fbff" />
+                android:textColor="#f7fbff"
+                android:textSize="18sp" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
@@ -52,11 +52,13 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="14dp"
                 android:background="@drawable/roundbtn"
-                app:backgroundTint="@null"
                 android:paddingLeft="50dp"
                 android:paddingRight="50dp"
                 android:text="Start"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                app:backgroundTint="@null" />
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
+
 </RelativeLayout>

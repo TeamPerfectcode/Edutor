@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.bumptech.glide.Glide
 import com.example.edutor.Login
 import com.example.edutor.R
 import com.example.edutor.adapter.PagerAdapter
@@ -17,16 +19,20 @@ import com.example.edutor.adapter.ZoomOutPageTransformer
 import com.example.edutor.create.create_class
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.mikhaellopez.circularimageview.CircularImageView
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.navheader.*
 
 
 class Home : AppCompatActivity() {
+
     lateinit var toogle: ActionBarDrawerToggle
     lateinit var adapter: PagerAdapter
     var prevMenuItem: MenuItem? = null
     lateinit var db: DatabaseReference
     lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -36,8 +42,7 @@ class Home : AppCompatActivity() {
         setdrawer(null)
         db = FirebaseDatabase.getInstance().reference
         sharedPreferences = getSharedPreferences(packageName, 0)
-        adapter =
-            PagerAdapter(supportFragmentManager)
+        adapter = PagerAdapter(supportFragmentManager)
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.explore -> pager.currentItem = 0
@@ -47,11 +52,7 @@ class Home : AppCompatActivity() {
             false
         }
         pager.addOnPageChangeListener(object : OnPageChangeListener {
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
             }
 
             override fun onPageSelected(position: Int) {
@@ -64,7 +65,8 @@ class Home : AppCompatActivity() {
                 prevMenuItem = bottom_navigation.menu.getItem(position)
             }
 
-            override fun onPageScrollStateChanged(state: Int) {}
+            override fun onPageScrollStateChanged(state: Int) {
+            }
         })
         setupPager()
 
@@ -83,17 +85,12 @@ class Home : AppCompatActivity() {
 
     private fun updateheaderdetails() {
         if (sharedPreferences.contains("email")) {
-            if (sharedPreferences.getString(
-                    "email",
-                    ""
-                ) == FirebaseAuth.getInstance().currentUser?.email.toString()
-            ) {
-
+            if (sharedPreferences.getString("email", "") == FirebaseAuth.getInstance().currentUser?.email.toString()) {
                 val header = nav.getHeaderView(0)
-                header.findViewById<TextView>(R.id.navusername).text =
-                    sharedPreferences.getString("username", "").toString()
-                header.findViewById<TextView>(R.id.navuseremail).text =
-                    sharedPreferences.getString("email", "").toString()
+                header.findViewById<TextView>(R.id.navusername).text = sharedPreferences.getString("username", "").toString()
+                header.findViewById<TextView>(R.id.navuseremail).text = sharedPreferences.getString("email", "").toString()
+                val proimg = header.findViewById<CircleImageView>(R.id.profileimg)
+                Glide.with(this).load(sharedPreferences.getString("imageurl", "").toString()).into(proimg)
             }
         }
     }
@@ -161,13 +158,16 @@ class Home : AppCompatActivity() {
                             val email = snapshot.child("email").value.toString()
                             val name = snapshot.child("username").value.toString()
                             val phno = snapshot.child("phno").value.toString()
+                            val proimg = snapshot.child("imageurl").value.toString()
                             sharedPreferences.edit().apply {
                                 putString("email", email)
                                 putString("username", name)
                                 putString("phno", phno)
+                                putString("imageurl", proimg)
                             }.apply()
                             navuseremail.text = email
                             navusername.text = name
+                            Glide.with(this@Home).load(proimg).into(profileimg)
                         }
                     }
                 }

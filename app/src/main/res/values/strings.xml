@@ -2,5 +2,12 @@
     <string name="app_name">Edutor</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string-array name="gender_of_user">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+
 </resources>
