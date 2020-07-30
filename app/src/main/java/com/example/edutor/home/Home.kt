@@ -16,6 +16,7 @@ import com.example.edutor.Login
 import com.example.edutor.R
 import com.example.edutor.adapter.PagerAdapter
 import com.example.edutor.adapter.ZoomOutPageTransformer
+import com.example.edutor.create.create_class
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.mikhaellopez.circularimageview.CircularImageView
@@ -100,6 +101,10 @@ class Home : AppCompatActivity() {
         toogle.syncState()
         nav.setNavigationItemSelectedListener {
             when (it.itemId) {
+                R.id.create -> {
+                    startActivity(Intent(applicationContext,create_class::class.java))
+                    finish()
+                }
                 R.id.message -> {
                 }
                 R.id.bookmark -> {
